@@ -4,7 +4,7 @@ import Prelude
 import Control.Monad.Eff (Eff)
 import Control.Monad.Eff.Console (CONSOLE, log)
 import Data.Array (filter, range)
-import Data.BigInt (BigInt, abs, fromInt, prime, pow, odd, even, fromString,
+import Data.BigInt (BigInt, abs, fromInt, prime, pow, modPow, odd, even, fromString,
                     toNumber, fromBase, toString)
 import Data.Foldable (fold)
 import Data.Maybe (Maybe(..), fromMaybe)
@@ -105,3 +105,6 @@ main = do
 
   log "Absolute value"
   quickCheck $ \(TestBigInt x) -> abs x == if x > zero then x else (-x)
+
+  log "Modulus power"
+  assert $ modPow (fromInt 3) (fromInt 100) (fromInt 31) == fromInt 25

@@ -10,6 +10,7 @@ module Data.BigInt
   , odd
   , prime
   , pow
+  , modPow
   , toNumber
   ) where
 
@@ -37,6 +38,9 @@ foreign import toNumber :: BigInt -> Number
 -- | Exponentiation for `BigInt`. If the exponent is less than 0, `pow`
 -- | returns 0. Also, `pow zero zero == one`.
 foreign import pow :: BigInt -> BigInt -> BigInt
+
+-- | Modular exponentiation, equivalent to `mod (pow a b) c`.
+foreign import modPow :: BigInt -> BigInt -> BigInt -> BigInt
 
 -- | The absolute value.
 foreign import abs :: BigInt -> BigInt

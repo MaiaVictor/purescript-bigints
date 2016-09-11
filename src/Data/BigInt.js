@@ -90,3 +90,11 @@ exports.pow = function(x) {
     return x.pow(y);
   };
 };
+
+exports.modPow = function(x){
+  return function(y){
+    return function(z){
+      return x.modPow(y,z);
+    };
+  };
+};
