@@ -19,6 +19,12 @@ exports["fromBase'"] = function(just) {
 
 exports.fromInt = bigInt;
 
+exports.toBase = function(b){
+  return function(x) {
+    return x.toString(b);
+  };
+};
+
 exports.toString = function(x) {
   return x.toString();
 };
