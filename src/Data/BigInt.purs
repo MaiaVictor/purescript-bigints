@@ -9,6 +9,8 @@ module Data.BigInt
   , abs
   , even
   , odd
+  , positive
+  , negative
   , prime
   , pow
   , modPow
@@ -54,6 +56,12 @@ foreign import odd :: BigInt -> Boolean
 
 -- | Returns `true` if the number is prime, `false` otherwise.
 foreign import prime :: BigInt -> Boolean
+
+-- | Returns `true` if the number is positive, `false` otherwise.
+foreign import positive :: BigInt -> Boolean
+
+-- | Returns `true` if the number is negative, `false` otherwise.
+foreign import negative :: BigInt -> Boolean
 
 -- | Parse a string into a `BigInt`, assuming a decimal representation. Returns
 -- | `Nothing` if the parse fails.

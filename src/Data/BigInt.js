@@ -87,6 +87,15 @@ exports.odd = function(x) {
   return x.isOdd();
 };
 
+exports.positive = function(x) {
+  return x.isPositive();
+};
+
+exports.negative = function(x) {
+  return x.isNegative();
+};
+
+
 exports.prime = function(x) {
   return x.isPrime();
 };
